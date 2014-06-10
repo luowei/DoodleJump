@@ -18,6 +18,8 @@ BOOL ballLeft;
 BOOL ballRight;
 BOOL stopSideMovement;
 
+float platformMoveDown;
+
 @interface Game (){
     NSTimer *movement;
 }
@@ -32,6 +34,20 @@ BOOL stopSideMovement;
 @end
 
 @implementation Game
+
+-(void)platformFall{
+    if(_ball.center.y > 500){
+        platformMoveDown = 1;
+    }else if(_ball.center.y > 450){
+        platformMoveDown = 2;
+    }else if(_ball.center.y > 400){
+        platformMoveDown = 4;
+    }else if(_ball.center.y > 300){
+        platformMoveDown = 5;
+    }else if(_ball.center.y >250){
+        platformMoveDown = 6;
+    }
+}
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     ballLeft = NO;
@@ -51,8 +67,11 @@ BOOL stopSideMovement;
 }
 
 -(void)platformMovement{
-    _platform3.center = CGPointMake(_platform3.center.x + platform3SideMovement, _platform3.center.y);
-    _platform5.center = CGPointMake(_platform5.center.x + platform5SideMovement, _platform5.center.y);
+    _platform1.center = CGPointMake(_platform1.center.x, _platform1.center.y + platformMoveDown);
+    _platform2.center = CGPointMake(_platform2.center.x, _platform2.center.y + platformMoveDown);
+    _platform3.center = CGPointMake(_platform3.center.x + platform3SideMovement, _platform3.center.y+platformMoveDown);
+    _platform4.center = CGPointMake(_platform4.center.x, _platform4.center.y + platformMoveDown);
+    _platform5.center = CGPointMake(_platform5.center.x + platform5SideMovement, _platform5.center.y+platformMoveDown);
     
     if(_platform3.center.x < 37){
         platform3SideMovement = 2;
@@ -67,15 +86,58 @@ BOOL stopSideMovement;
         platform5SideMovement = -2;
     }
     
+    platformMoveDown -= 0.1;
+    
+    if(platformMoveDown < 0){
+        platformMoveDown = 0;
+    }
+    
+    if(_platform1.center.y > 575){
+        randomPosition = arc4random() % 248;
+        randomPosition += 36;
+        _platform1.center = CGPointMake(randomPosition, -6);
+    }
+    if(_platform2.center.y > 575){
+        randomPosition = arc4random() % 248;
+        randomPosition += 36;
+        _platform2.center = CGPointMake(randomPosition, -6);
+    }
+    if(_platform3.center.y > 575){
+        randomPosition = arc4random() % 248;
+        randomPosition += 36;
+        _platform3.center = CGPointMake(randomPosition, -6);
+    }
+    if(_platform4.center.y > 575){
+        randomPosition = arc4random() % 248;
+        randomPosition += 36;
+        _platform4.center = CGPointMake(randomPosition, -6);
+    }
+    if(_platform5.center.y > 575){
+        randomPosition = arc4random() % 248;
+        randomPosition += 36;
+        _platform5.center = CGPointMake(randomPosition, -6);
+    }
+    
+    
 }
 
 -(void)moving{
+    if(_ball.center.y < 250){
+        _ball.center = CGPointMake(_ball.center.x, 250);
+    }
+    
     [self platformMovement];
     
     _ball.center = CGPointMake(_ball.center.x + sideMovement, _ball.center.y - upMovement);
-    if(CGRectIntersectsRect(_ball.frame, _platform1.frame) && upMovement < -2){
+    if((CGRectIntersectsRect(_ball.frame, _platform1.frame) && upMovement < -2)
+       || (CGRectIntersectsRect(_ball.frame, _platform2.frame) && upMovement < -2)
+       || (CGRectIntersectsRect(_ball.frame, _platform3.frame) && upMovement < -2)
+       || (CGRectIntersectsRect(_ball.frame, _platform4.frame) && upMovement < -2)
+       || (CGRectIntersectsRect(_ball.frame, _platform5.frame) && upMovement < -2)){
         [self bounce];
+        [self platformFall];
     }
+    
     upMovement -= 0.1;
     
     if(ballLeft == YES){
@@ -125,7 +187,13 @@ BOOL stopSideMovement;
     _ball.animationDuration = 0.2;
     [_ball startAnimating];
     
-    upMovement = 5;
+    if(_ball.center.y > 450){
+        upMovement = 5;
+    }else if(_ball.center.y > 350){
+        upMovement = 4;
+    }else if(_ball.center.y > 250){
+        upMovement = 3;
+    }
 }
 
 - (IBAction)startGame:(id)sender {
