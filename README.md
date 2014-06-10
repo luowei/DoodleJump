@@ -6,3 +6,4 @@ DoodleJump
 截图：
 ![DoodleJump](https://raw.githubusercontent.com/luowei/DoodleJump/master/doc/a.png)
 ![DoodleJump](https://raw.githubusercontent.com/luowei/DoodleJump/master/doc/b.png)
+![DoodleJump](https://raw.githubusercontent.com/luowei/DoodleJump/master/doc/c.png)

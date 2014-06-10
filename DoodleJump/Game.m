@@ -59,10 +59,41 @@ BOOL platform5Used;
         addedScore = 0;
     }
     _score.text = [NSString stringWithFormat:@"%i",scoreNumber];
+    if(scoreNumber > 500 && scoreNumber < 1000){
+        levelNumber = 2;
+    }
+    if(scoreNumber > 10000 && scoreNumber < 2000){
+        levelNumber = 3;
+    }
+    if(scoreNumber > 2000 && scoreNumber < 3000){
+        levelNumber = 4;
+    }
+    if(scoreNumber > 3000 && scoreNumber < 4000){
+        levelNumber = 5;
+    }
+    if(scoreNumber > 4000 && scoreNumber < 5000){
+        levelNumber = 6;
+    }
 }
 
 -(void)gameOv{
+    _ball.hidden = YES;
+    _platform1.hidden = YES;
+    _platform2.hidden = YES;
+    _platform3.hidden = YES;
+    _platform4.hidden = YES;
+    _platform5.hidden = YES;
+    _score.hidden = YES;
+    _gameOver.hidden = NO;
+    _exit.hidden = NO;
+    _finalScore.hidden = NO;
+    _finalScore.text = [NSString stringWithFormat:@"最终得分:%i",scoreNumber];
+    [movement invalidate];
     
+    if(scoreNumber > highScoreNumber){
+        highScoreNumber = scoreNumber;
+        [[NSUserDefaults standardUserDefaults]setInteger:highScoreNumber forKey:@"highScoreNumber"];
+    }
 }
 
 -(void)platformFall{
@@ -104,16 +135,100 @@ BOOL platform5Used;
     _platform5.center = CGPointMake(_platform5.center.x + platform5SideMovement, _platform5.center.y+platformMoveDown);
     
     if(_platform3.center.x < 37){
-        platform3SideMovement = 2;
+        switch (levelNumber) {
+            case 1:
+                platform3SideMovement = 2;
+                break;
+            case 2:
+                platform3SideMovement = 3;
+                break;
+            case 3:
+                platform3SideMovement = 4;
+                break;
+            case 4:
+                platform3SideMovement = 5;
+                break;
+            case 5:
+                platform3SideMovement = 6;
+                break;
+            case 6:
+                platform3SideMovement = 7;
+                break;
+            default:
+                break;
+        }
     }
     if(_platform3.center.x > 283){
-        platform3SideMovement = -2;
+        switch (levelNumber) {
+            case 1:
+                platform3SideMovement = -2;
+                break;
+            case 2:
+                platform3SideMovement = -3;
+                break;
+            case 3:
+                platform3SideMovement = -4;
+                break;
+            case 4:
+                platform3SideMovement = -5;
+                break;
+            case 5:
+                platform3SideMovement = -6;
+                break;
+            case 6:
+                platform3SideMovement = -7;
+                break;
+            default:
+                break;
+        }
     }
     if(_platform5.center.x < 37){
-        platform5SideMovement = 2;
+        switch (levelNumber) {
+            case 1:
+                platform5SideMovement = 2;
+                break;
+            case 2:
+                platform5SideMovement = 3;
+                break;
+            case 3:
+                platform5SideMovement = 4;
+                break;
+            case 4:
+                platform5SideMovement = 5;
+                break;
+            case 5:
+                platform5SideMovement = 6;
+                break;
+            case 6:
+                platform5SideMovement = 7;
+                break;
+            default:
+                break;
+        }
     }
     if(_platform5.center.x > 283){
-        platform5SideMovement = -2;
+        switch (levelNumber) {
+            case 1:
+                platform5SideMovement = -2;
+                break;
+            case 2:
+                platform5SideMovement = -3;
+                break;
+            case 3:
+                platform5SideMovement = -4;
+                break;
+            case 4:
+                platform5SideMovement = -5;
+                break;
+            case 5:
+                platform5SideMovement = -6;
+                break;
+            case 6:
+                platform5SideMovement = -7;
+                break;
+            default:
+                break;
+        }
     }
     
     platformMoveDown -= 0.1;
@@ -157,6 +272,10 @@ BOOL platform5Used;
 }
 
 -(void)moving{
+    if(_ball.center.y > 580){
+        [self gameOv];
+    }
+    
     [self scoring];
     
     if(_ball.center.y < 250){
@@ -307,8 +426,6 @@ BOOL platform5Used;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
     _platform2.hidden = YES;
     _platform3.hidden = YES;
     _platform4.hidden = YES;
@@ -321,13 +438,19 @@ BOOL platform5Used;
     
     scoreNumber = 0;
     addedScore = 0;
-    levelNumber = 0;
+    levelNumber = 1;
     
     platform1Used = NO;
     platform2Used = NO;
     platform3Used = NO;
     platform4Used = NO;
     platform5Used = NO;
+    
+    highScoreNumber = [[NSUserDefaults standardUserDefaults]integerForKey:@"highScoreNumber"];
+    upMovement = 0;
+    sideMovement = 0;
+    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning

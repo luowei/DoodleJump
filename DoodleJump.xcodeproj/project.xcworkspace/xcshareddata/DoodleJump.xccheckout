@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C9CAD92F-96D0-4804-8DB2-1B86A0F4511E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DoodleJump</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6EC4F6BC-99D5-4344-9AE5-8F67D8324606</key>
+		<string>https://github.com/luowei/DoodleJump.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DoodleJump.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6EC4F6BC-99D5-4344-9AE5-8F67D8324606</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/luowei/DoodleJump.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6EC4F6BC-99D5-4344-9AE5-8F67D8324606</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6EC4F6BC-99D5-4344-9AE5-8F67D8324606</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DoodleJump</string>
+		</dict>
+	</array>
+</dict>
+</plist>

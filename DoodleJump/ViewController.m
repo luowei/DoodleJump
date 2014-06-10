@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 
+int highScoreNumber;
+
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *highScore;
 @end
 
 @implementation ViewController
@@ -17,7 +20,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    highScoreNumber = [[NSUserDefaults standardUserDefaults]integerForKey:@"highScoreNumber"];
+    _highScore.text = [NSString stringWithFormat:@"最高得分:%i",highScoreNumber];
 }
 
 - (void)didReceiveMemoryWarning
