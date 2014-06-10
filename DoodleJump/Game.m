@@ -20,6 +20,17 @@ BOOL stopSideMovement;
 
 float platformMoveDown;
 
+int scoreNumber;
+int highScoreNumber;
+int addedScore;
+int levelNumber;
+
+BOOL platform1Used;
+BOOL platform2Used;
+BOOL platform3Used;
+BOOL platform4Used;
+BOOL platform5Used;
+
 @interface Game (){
     NSTimer *movement;
 }
@@ -31,9 +42,28 @@ float platformMoveDown;
 @property (weak, nonatomic) IBOutlet UIImageView *platform4;
 @property (weak, nonatomic) IBOutlet UIImageView *platform5;
 
+@property (weak, nonatomic) IBOutlet UILabel *score;
+@property (weak, nonatomic) IBOutlet UILabel *gameOver;
+@property (weak, nonatomic) IBOutlet UILabel *finalScore;
+@property (weak, nonatomic) IBOutlet UILabel *highScore;
+@property (weak, nonatomic) IBOutlet UIButton *exit;
+
 @end
 
 @implementation Game
+
+-(void)scoring{
+    scoreNumber = scoreNumber + addedScore;
+    addedScore -= 1;
+    if(addedScore < 0){
+        addedScore = 0;
+    }
+    _score.text = [NSString stringWithFormat:@"%i",scoreNumber];
+}
+
+-(void)gameOv{
+    
+}
 
 -(void)platformFall{
     if(_ball.center.y > 500){
@@ -96,32 +126,39 @@ float platformMoveDown;
         randomPosition = arc4random() % 248;
         randomPosition += 36;
         _platform1.center = CGPointMake(randomPosition, -6);
+        platform1Used = NO;
     }
     if(_platform2.center.y > 575){
         randomPosition = arc4random() % 248;
         randomPosition += 36;
         _platform2.center = CGPointMake(randomPosition, -6);
+        platform2Used = NO;
     }
     if(_platform3.center.y > 575){
         randomPosition = arc4random() % 248;
         randomPosition += 36;
         _platform3.center = CGPointMake(randomPosition, -6);
+        platform3Used = NO;
     }
     if(_platform4.center.y > 575){
         randomPosition = arc4random() % 248;
         randomPosition += 36;
         _platform4.center = CGPointMake(randomPosition, -6);
+        platform4Used = NO;
     }
     if(_platform5.center.y > 575){
         randomPosition = arc4random() % 248;
         randomPosition += 36;
         _platform5.center = CGPointMake(randomPosition, -6);
+        platform5Used = NO;
     }
     
     
 }
 
 -(void)moving{
+    [self scoring];
+    
     if(_ball.center.y < 250){
         _ball.center = CGPointMake(_ball.center.x, 250);
     }
@@ -129,13 +166,45 @@ float platformMoveDown;
     [self platformMovement];
     
     _ball.center = CGPointMake(_ball.center.x + sideMovement, _ball.center.y - upMovement);
-    if((CGRectIntersectsRect(_ball.frame, _platform1.frame) && upMovement < -2)
-       || (CGRectIntersectsRect(_ball.frame, _platform2.frame) && upMovement < -2)
-       || (CGRectIntersectsRect(_ball.frame, _platform3.frame) && upMovement < -2)
-       || (CGRectIntersectsRect(_ball.frame, _platform4.frame) && upMovement < -2)
-       || (CGRectIntersectsRect(_ball.frame, _platform5.frame) && upMovement < -2)){
+    if(CGRectIntersectsRect(_ball.frame, _platform1.frame) && upMovement < -2){
         [self bounce];
         [self platformFall];
+        if(platform1Used == NO){
+            addedScore = 10;
+            platform1Used = YES;
+        }
+    }
+    if (CGRectIntersectsRect(_ball.frame, _platform2.frame) && upMovement < -2){
+        [self bounce];
+        [self platformFall];
+        if(platform2Used == NO){
+            addedScore = 10;
+            platform2Used = YES;
+        }
+    }
+    if(CGRectIntersectsRect(_ball.frame, _platform3.frame) && upMovement < -2){
+        [self bounce];
+        [self platformFall];
+        if(platform3Used == NO){
+            addedScore = 10;
+            platform3Used = YES;
+        }
+    }
+    if(CGRectIntersectsRect(_ball.frame, _platform4.frame) && upMovement < -2){
+        [self bounce];
+        [self platformFall];
+        if(platform4Used == NO){
+            addedScore = 10;
+            platform4Used = YES;
+        }
+    }
+    if(CGRectIntersectsRect(_ball.frame, _platform5.frame) && upMovement < -2){
+        [self bounce];
+        [self platformFall];
+        if(platform5Used == NO){
+            addedScore = 10;
+            platform5Used = YES;
+        }
     }
     
     upMovement -= 0.1;
@@ -244,6 +313,21 @@ float platformMoveDown;
     _platform3.hidden = YES;
     _platform4.hidden = YES;
     _platform5.hidden = YES;
+    
+    _gameOver.hidden = YES;
+    _finalScore.hidden = YES;
+    _highScore.hidden = YES;
+    _exit.hidden = YES;
+    
+    scoreNumber = 0;
+    addedScore = 0;
+    levelNumber = 0;
+    
+    platform1Used = NO;
+    platform2Used = NO;
+    platform3Used = NO;
+    platform4Used = NO;
+    platform5Used = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -253,14 +337,14 @@ float platformMoveDown;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
