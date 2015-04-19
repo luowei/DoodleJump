@@ -21,11 +21,6 @@
 		EAF13909194694E700DEA778 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138EB194694E700DEA778 /* UIKit.framework */; };
 		EAF13911194694E700DEA778 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF1390F194694E700DEA778 /* InfoPlist.strings */; };
 		EAF13913194694E700DEA778 /* DoodleJumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF13912194694E700DEA778 /* DoodleJumpTests.m */; };
-		EAF13921194696AE00DEA778 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1391C194696AE00DEA778 /* ball.png */; };
-		EAF13922194696AE00DEA778 /* ballBounce1.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1391D194696AE00DEA778 /* ballBounce1.png */; };
-		EAF13923194696AE00DEA778 /* ballBounce2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1391E194696AE00DEA778 /* ballBounce2.png */; };
-		EAF13924194696AE00DEA778 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1391F194696AE00DEA778 /* mainMenu.png */; };
-		EAF13925194696AE00DEA778 /* platform.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF13920194696AE00DEA778 /* platform.png */; };
 		EAF1392819469B3F00DEA778 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1392719469B3F00DEA778 /* Game.m */; };
 		EAF1392A1946D4D100DEA778 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EAF139291946D4D100DEA778 /* README.md */; };
 /* End PBXBuildFile section */
@@ -60,11 +55,6 @@
 		EAF1390E194694E700DEA778 /* DoodleJumpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoodleJumpTests-Info.plist"; sourceTree = "<group>"; };
 		EAF13910194694E700DEA778 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAF13912194694E700DEA778 /* DoodleJumpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoodleJumpTests.m; sourceTree = "<group>"; };
-		EAF1391C194696AE00DEA778 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
-		EAF1391D194696AE00DEA778 /* ballBounce1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballBounce1.png; sourceTree = "<group>"; };
-		EAF1391E194696AE00DEA778 /* ballBounce2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballBounce2.png; sourceTree = "<group>"; };
-		EAF1391F194696AE00DEA778 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
-		EAF13920194696AE00DEA778 /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
 		EAF1392619469B3F00DEA778 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		EAF1392719469B3F00DEA778 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		EAF139291946D4D100DEA778 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -144,11 +134,6 @@
 		EAF138EE194694E700DEA778 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EAF1391C194696AE00DEA778 /* ball.png */,
-				EAF1391D194696AE00DEA778 /* ballBounce1.png */,
-				EAF1391E194696AE00DEA778 /* ballBounce2.png */,
-				EAF1391F194696AE00DEA778 /* mainMenu.png */,
-				EAF13920194696AE00DEA778 /* platform.png */,
 				EAF138EF194694E700DEA778 /* DoodleJump-Info.plist */,
 				EAF138F0194694E700DEA778 /* InfoPlist.strings */,
 				EAF138F3194694E700DEA778 /* main.m */,
@@ -255,14 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF13900194694E700DEA778 /* Images.xcassets in Resources */,
-				EAF13923194696AE00DEA778 /* ballBounce2.png in Resources */,
-				EAF13924194696AE00DEA778 /* mainMenu.png in Resources */,
 				EAF138F2194694E700DEA778 /* InfoPlist.strings in Resources */,
-				EAF13925194696AE00DEA778 /* platform.png in Resources */,
-				EAF13921194696AE00DEA778 /* ball.png in Resources */,
 				EAF1392A1946D4D100DEA778 /* README.md in Resources */,
 				EAF138FB194694E700DEA778 /* Main.storyboard in Resources */,
-				EAF13922194696AE00DEA778 /* ballBounce1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,12 +389,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
@@ -426,12 +406,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
