@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C9CAD92F-96D0-4804-8DB2-1B86A0F4511E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>DoodleJump</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3356CEEDF81A6EE9CE4056456B1E1DC6CB104356</key>
 		<string>github.com:luowei/DoodleJump.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DoodleJump.xcodeproj</string>
+	<string>DoodleJump.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3356CEEDF81A6EE9CE4056456B1E1DC6CB104356</key>

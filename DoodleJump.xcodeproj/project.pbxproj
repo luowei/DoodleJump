@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA56F5041AE6516600AA03DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF138FD194694E700DEA778 /* ViewController.m */; };
+		EA56F5051AE6516600AA03DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF138F7194694E700DEA778 /* AppDelegate.m */; };
+		EA56F5061AE6516600AA03DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF138F3194694E700DEA778 /* main.m */; };
+		EA56F5071AE6516600AA03DB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1392719469B3F00DEA778 /* Game.m */; };
+		EA56F5091AE6516600AA03DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138E9194694E700DEA778 /* CoreGraphics.framework */; };
+		EA56F50A1AE6516600AA03DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138EB194694E700DEA778 /* UIKit.framework */; };
+		EA56F50B1AE6516600AA03DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138E7194694E700DEA778 /* Foundation.framework */; };
+		EA56F50D1AE6516600AA03DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF138FF194694E700DEA778 /* Images.xcassets */; };
+		EA56F50E1AE6516600AA03DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF138F0194694E700DEA778 /* InfoPlist.strings */; };
+		EA56F50F1AE6516600AA03DB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EAF139291946D4D100DEA778 /* README.md */; };
+		EA56F5101AE6516600AA03DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF138F9194694E700DEA778 /* Main.storyboard */; };
 		EAF138E8194694E700DEA778 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138E7194694E700DEA778 /* Foundation.framework */; };
 		EAF138EA194694E700DEA778 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138E9194694E700DEA778 /* CoreGraphics.framework */; };
 		EAF138EC194694E700DEA778 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF138EB194694E700DEA778 /* UIKit.framework */; };
@@ -36,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA56F5141AE6516600AA03DB /* Doodle-Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doodle-Jump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA56F5151AE6516600AA03DB /* Doodle-Jump-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Doodle-Jump-Info.plist"; path = "/Users/luowei/Documents/git_repo/DoodleJump/Doodle-Jump-Info.plist"; sourceTree = "<absolute>"; };
 		EAF138E4194694E700DEA778 /* DoodleJump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoodleJump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF138E7194694E700DEA778 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAF138E9194694E700DEA778 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +74,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EA56F5081AE6516600AA03DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA56F5091AE6516600AA03DB /* CoreGraphics.framework in Frameworks */,
+				EA56F50A1AE6516600AA03DB /* UIKit.framework in Frameworks */,
+				EA56F50B1AE6516600AA03DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAF138E1194694E700DEA778 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +115,7 @@
 				EAF1390C194694E700DEA778 /* DoodleJumpTests */,
 				EAF138E6194694E700DEA778 /* Frameworks */,
 				EAF138E5194694E700DEA778 /* Products */,
+				EA56F5151AE6516600AA03DB /* Doodle-Jump-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +124,7 @@
 			children = (
 				EAF138E4194694E700DEA778 /* DoodleJump.app */,
 				EAF13905194694E700DEA778 /* DoodleJumpTests.xctest */,
+				EA56F5141AE6516600AA03DB /* Doodle-Jump.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +188,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EA56F5021AE6516600AA03DB /* Doodle-Jump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA56F5111AE6516600AA03DB /* Build configuration list for PBXNativeTarget "Doodle-Jump" */;
+			buildPhases = (
+				EA56F5031AE6516600AA03DB /* Sources */,
+				EA56F5081AE6516600AA03DB /* Frameworks */,
+				EA56F50C1AE6516600AA03DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Doodle-Jump";
+			productName = DoodleJump;
+			productReference = EA56F5141AE6516600AA03DB /* Doodle-Jump.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EAF138E3194694E700DEA778 /* DoodleJump */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAF13916194694E700DEA778 /* Build configuration list for PBXNativeTarget "DoodleJump" */;
@@ -207,6 +249,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = rootls;
 				TargetAttributes = {
+					EA56F5021AE6516600AA03DB = {
+						DevelopmentTeam = SHDWRXPG6N;
+					};
 					EAF138E3194694E700DEA778 = {
 						DevelopmentTeam = G3A2KYKYBU;
 					};
@@ -230,11 +275,23 @@
 			targets = (
 				EAF138E3194694E700DEA778 /* DoodleJump */,
 				EAF13904194694E700DEA778 /* DoodleJumpTests */,
+				EA56F5021AE6516600AA03DB /* Doodle-Jump */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EA56F50C1AE6516600AA03DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA56F50D1AE6516600AA03DB /* Images.xcassets in Resources */,
+				EA56F50E1AE6516600AA03DB /* InfoPlist.strings in Resources */,
+				EA56F50F1AE6516600AA03DB /* README.md in Resources */,
+				EA56F5101AE6516600AA03DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAF138E2194694E700DEA778 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +314,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EA56F5031AE6516600AA03DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA56F5041AE6516600AA03DB /* ViewController.m in Sources */,
+				EA56F5051AE6516600AA03DB /* AppDelegate.m in Sources */,
+				EA56F5061AE6516600AA03DB /* main.m in Sources */,
+				EA56F5071AE6516600AA03DB /* Game.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAF138E0194694E700DEA778 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +382,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EA56F5121AE6516600AA03DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Doodle-Jump-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "Doodle-Jump";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA56F5131AE6516600AA03DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Doodle-Jump-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "Doodle-Jump";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		EAF13914194694E700DEA778 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -397,7 +499,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -414,7 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -462,6 +564,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EA56F5111AE6516600AA03DB /* Build configuration list for PBXNativeTarget "Doodle-Jump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA56F5121AE6516600AA03DB /* Debug */,
+				EA56F5131AE6516600AA03DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EAF138DF194694E700DEA778 /* Build configuration list for PBXProject "DoodleJump" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
