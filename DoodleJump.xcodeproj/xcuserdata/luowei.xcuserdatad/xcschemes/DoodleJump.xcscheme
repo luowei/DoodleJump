@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAF138E3194694E700DEA778"
-               BuildableName = "DoodleJump.app"
+               BuildableName = "DoodleJump"
                BlueprintName = "DoodleJump"
                ReferencedContainer = "container:DoodleJump.xcodeproj">
             </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAF138E3194694E700DEA778"
-            BuildableName = "DoodleJump.app"
+            BuildableName = "DoodleJump"
             BlueprintName = "DoodleJump"
             ReferencedContainer = "container:DoodleJump.xcodeproj">
          </BuildableReference>
