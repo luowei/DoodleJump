@@ -52,6 +52,14 @@ BOOL platform5Used;
 
 @implementation Game
 
+-(CGFloat)screenHeight{
+    return [UIScreen mainScreen].bounds.size.height;
+}
+
+-(CGFloat)screenWidth{
+    return [UIScreen mainScreen].bounds.size.width;
+}
+
 -(void)scoring{
     scoreNumber = scoreNumber + addedScore;
     addedScore -= 1;
@@ -97,15 +105,15 @@ BOOL platform5Used;
 }
 
 -(void)platformFall{
-    if(_ball.center.y > 500){
+    if(_ball.center.y > self.screenHeight*5/6){
         platformMoveDown = 1;
-    }else if(_ball.center.y > 450){
+    }else if(_ball.center.y > self.screenHeight*4/6){
         platformMoveDown = 2;
-    }else if(_ball.center.y > 400){
+    }else if(_ball.center.y > self.screenHeight*3/6){
         platformMoveDown = 4;
-    }else if(_ball.center.y > 300){
+    }else if(_ball.center.y > self.screenHeight*2/6){
         platformMoveDown = 5;
-    }else if(_ball.center.y >250){
+    }else if(_ball.center.y >self.screenHeight*1/6){
         platformMoveDown = 6;
     }
 }
@@ -120,7 +128,7 @@ BOOL platform5Used;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
-    if(point.x < 140){
+    if(point.x < self.screenWidth/2){
         ballLeft = YES;
     }else{
         ballRight = YES;
@@ -133,8 +141,10 @@ BOOL platform5Used;
     _platform3.center = CGPointMake(_platform3.center.x + platform3SideMovement, _platform3.center.y+platformMoveDown);
     _platform4.center = CGPointMake(_platform4.center.x, _platform4.center.y + platformMoveDown);
     _platform5.center = CGPointMake(_platform5.center.x + platform5SideMovement, _platform5.center.y+platformMoveDown);
-    
-    if(_platform3.center.x < 37){
+
+    CGFloat platWidth = _platform1.frame.size.width;
+
+    if(_platform3.center.x < platWidth/2){
         switch (levelNumber) {
             case 1:
                 platform3SideMovement = 2;
@@ -158,7 +168,7 @@ BOOL platform5Used;
                 break;
         }
     }
-    if(_platform3.center.x > 283){
+    if(_platform3.center.x > self.screenWidth-platWidth/2){
         switch (levelNumber) {
             case 1:
                 platform3SideMovement = -2;
@@ -182,7 +192,7 @@ BOOL platform5Used;
                 break;
         }
     }
-    if(_platform5.center.x < 37){
+    if(_platform5.center.x < platWidth/2){
         switch (levelNumber) {
             case 1:
                 platform5SideMovement = 2;
@@ -206,7 +216,7 @@ BOOL platform5Used;
                 break;
         }
     }
-    if(_platform5.center.x > 283){
+    if(_platform5.center.x > self.screenWidth-platWidth/2){
         switch (levelNumber) {
             case 1:
                 platform5SideMovement = -2;
@@ -236,35 +246,38 @@ BOOL platform5Used;
     if(platformMoveDown < 0){
         platformMoveDown = 0;
     }
-    
-    if(_platform1.center.y > 575){
-        randomPosition = arc4random() % 248;
-        randomPosition += 36;
-        _platform1.center = CGPointMake(randomPosition, -6);
+
+    CGFloat platHeight = _platform1.frame.size.height;
+    int platWidthBounds = lrintf(self.screenWidth-platWidth/2);
+
+    if(_platform1.center.y > self.screenHeight-platHeight/2){
+        randomPosition = arc4random() % platWidthBounds;
+        randomPosition += (platWidth/2);
+        _platform1.center = CGPointMake(randomPosition, -platHeight/2);
         platform1Used = NO;
     }
-    if(_platform2.center.y > 575){
-        randomPosition = arc4random() % 248;
-        randomPosition += 36;
-        _platform2.center = CGPointMake(randomPosition, -6);
+    if(_platform2.center.y > self.screenHeight-platHeight/2){
+        randomPosition = arc4random() % platWidthBounds;
+        randomPosition += (platWidth/2);
+        _platform2.center = CGPointMake(randomPosition, -platHeight/2);
         platform2Used = NO;
     }
-    if(_platform3.center.y > 575){
-        randomPosition = arc4random() % 248;
-        randomPosition += 36;
-        _platform3.center = CGPointMake(randomPosition, -6);
+    if(_platform3.center.y > self.screenHeight-platHeight/2){
+        randomPosition = arc4random() % platWidthBounds;
+        randomPosition += (platWidth/2);
+        _platform3.center = CGPointMake(randomPosition, -platHeight/2);
         platform3Used = NO;
     }
-    if(_platform4.center.y > 575){
-        randomPosition = arc4random() % 248;
-        randomPosition += 36;
-        _platform4.center = CGPointMake(randomPosition, -6);
+    if(_platform4.center.y > self.screenHeight-platHeight/2){
+        randomPosition = arc4random() % platWidthBounds;
+        randomPosition += (platWidth/2);
+        _platform4.center = CGPointMake(randomPosition, -platHeight/2);
         platform4Used = NO;
     }
-    if(_platform5.center.y > 575){
-        randomPosition = arc4random() % 248;
-        randomPosition += 36;
-        _platform5.center = CGPointMake(randomPosition, -6);
+    if(_platform5.center.y > self.screenHeight-platHeight/2){
+        randomPosition = arc4random() % platWidthBounds;
+        randomPosition += (platWidth/2);
+        _platform5.center = CGPointMake(randomPosition, -platHeight/2);
         platform5Used = NO;
     }
     
@@ -272,7 +285,7 @@ BOOL platform5Used;
 }
 
 -(void)moving{
-    if(_ball.center.y > 580){
+    if(_ball.center.y > self.screenHeight){
         [self gameOv];
     }
     
@@ -357,11 +370,12 @@ BOOL platform5Used;
     }
     
     //超出屏幕左边框时从右边框出来，超出屏幕右边框时从左边框出来
-    if(_ball.center.x < -11){
-        _ball.center = CGPointMake(330, _ball.center.y);
+    CGFloat ballWidth = _ball.frame.size.width;
+    if(_ball.center.x < -ballWidth/2){
+        _ball.center = CGPointMake(self.screenWidth+ballWidth/2, _ball.center.y);
     }
-    if(_ball.center.x > 330){
-        _ball.center = CGPointMake(-11, _ball.center.y);
+    if(_ball.center.x > self.screenWidth+ballWidth/2){
+        _ball.center = CGPointMake(-ballWidth/2, _ball.center.y);
     }
 }
 
@@ -375,12 +389,12 @@ BOOL platform5Used;
     _ball.animationDuration = 0.2;
     [_ball startAnimating];
     
-    if(_ball.center.y > 450){
+    if(_ball.center.y > self.screenHeight*0.75){
+        upMovement = 6;
+    }else if(_ball.center.y > self.screenHeight*0.5){
         upMovement = 5;
-    }else if(_ball.center.y > 350){
+    }else if(_ball.center.y > self.screenHeight*0.25){
         upMovement = 4;
-    }else if(_ball.center.y > 250){
-        upMovement = 3;
     }
 }
 
@@ -394,23 +408,27 @@ BOOL platform5Used;
     _platform3.hidden = NO;
     _platform4.hidden = NO;
     _platform5.hidden = NO;
+
+    CGFloat platWidth = _platform2.frame.size.width;
+    CGFloat platHeight = _platform2.frame.size.height;
+    int platWidthBounds = lrintf(self.screenWidth-platWidth/2);
     
-    randomPosition = arc4random() % 248;
-    randomPosition += 36;
-    _platform2.center = CGPointMake(randomPosition, 448);
+    randomPosition = arc4random() % platWidthBounds;
+    randomPosition += (platWidth/2);
+    _platform2.center = CGPointMake(randomPosition, self.screenHeight*4/5);
     
-    randomPosition = arc4random() % 248;
-    randomPosition += 36;
-    _platform3.center = CGPointMake(randomPosition, 336);
+    randomPosition = arc4random() % platWidthBounds;
+    randomPosition += (platWidth/2);
+    _platform3.center = CGPointMake(randomPosition, self.screenHeight*3/5);
     
-    randomPosition = arc4random() % 248;
-    randomPosition += 36;
-    _platform4.center = CGPointMake(randomPosition, 224);
+    randomPosition = arc4random() % platWidthBounds;
+    randomPosition += (platWidth/2);
+    _platform4.center = CGPointMake(randomPosition, self.screenHeight*2/5);
     
-    randomPosition = arc4random() % 248;
-    randomPosition += 36;
-    _platform5.center = CGPointMake(randomPosition, 112);
-    
+    randomPosition = arc4random() % platWidthBounds;
+    randomPosition += (platWidth/2);
+    _platform5.center = CGPointMake(randomPosition, self.screenHeight*1/5);
+
     platform3SideMovement = -2;
     platform5SideMovement = 2;
 }

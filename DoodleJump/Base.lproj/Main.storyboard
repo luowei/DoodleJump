@@ -80,7 +80,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="S5d-ni-IvX">
-                                <rect key="frame" x="130" y="372.99999427342459" width="60" height="30"/>
+                                <rect key="frame" x="130" y="373" width="60" height="29.999989552061454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" title="开始游戏">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
