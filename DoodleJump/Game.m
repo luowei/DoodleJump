@@ -410,7 +410,6 @@ BOOL platform5Used;
     _platform5.hidden = NO;
 
     CGFloat platWidth = _platform2.frame.size.width;
-    CGFloat platHeight = _platform2.frame.size.height;
     int platWidthBounds = lrintf(self.screenWidth-platWidth/2);
     
     randomPosition = arc4random() % platWidthBounds;
