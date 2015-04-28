@@ -497,9 +497,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b87ab5a5-1091-47a4-b8c6-90ddc424a581";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -515,9 +515,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoodleJump/DoodleJump-Prefix.pch";
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b87ab5a5-1091-47a4-b8c6-90ddc424a581";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
