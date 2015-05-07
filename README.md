@@ -3,6 +3,8 @@
 []()DoodleJump
 ========
 
+AppStore Url:`https://itunes.apple.com/cn/app/id990121195`
+
 一个小球跳云梯小游戏...
 
 截图：
