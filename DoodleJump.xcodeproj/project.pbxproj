@@ -249,12 +249,6 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = rootls;
 				TargetAttributes = {
-					EA56F5021AE6516600AA03DB = {
-						DevelopmentTeam = SHDWRXPG6N;
-					};
-					EAF138E3194694E700DEA778 = {
-						DevelopmentTeam = G3A2KYKYBU;
-					};
 					EAF13904194694E700DEA778 = {
 						TestTargetID = EAF138E3194694E700DEA778;
 					};
@@ -499,7 +493,7 @@
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b87ab5a5-1091-47a4-b8c6-90ddc424a581";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -517,7 +511,7 @@
 				INFOPLIST_FILE = "DoodleJump/DoodleJump-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b87ab5a5-1091-47a4-b8c6-90ddc424a581";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
